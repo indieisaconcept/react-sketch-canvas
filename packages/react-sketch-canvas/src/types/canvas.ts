@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 /**
  * Image type to export the canvas as.
  */
@@ -50,6 +52,10 @@ export interface CanvasPath {
    * Color of the stroke.
    */
   readonly strokeColor: string;
+  /**
+   * Blending style for the stroke.
+   */
+  readonly strokeBlendMode: CSSProperties["mixBlendMode"];
   /**
    * Whether the path is a draw mode or erase mode.
    */

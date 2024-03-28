@@ -348,6 +348,7 @@ release drawing even when point goes out of canvas */
               id={`${id}__eraser-${i}`}
               paths={eraserPath.paths}
               strokeColor="#000000"
+              strokeBlendMode="normal"
               strokeWidth={eraserPath.strokeWidth}
             />
           ))}

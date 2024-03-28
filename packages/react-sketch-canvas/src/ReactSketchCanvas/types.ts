@@ -1,4 +1,5 @@
 /* Props validation */
+import { CSSProperties } from "react";
 import { CanvasProps, CanvasRef } from "../Canvas/types";
 import { CanvasPath } from "../types";
 
@@ -54,6 +55,14 @@ export interface ReactSketchCanvasProps
    * @defaultValue 4
    */
   strokeWidth?: number;
+  /**
+   * Blending style for the stroke.
+   *
+   * @remarks This is only applicable when the eraseMode is set to false.
+   *
+   * @defaultValue "normal"
+   */
+  strokeBlendMode?: CSSProperties["mixBlendMode"];
   /**
    * Whether to record the timestamp of the drawing. This will be stored in
    * the CanvasPath object in milliseconds. This can be used to calculate the time taken to draw

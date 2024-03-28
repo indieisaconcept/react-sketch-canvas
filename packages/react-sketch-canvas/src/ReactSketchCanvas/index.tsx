@@ -33,6 +33,7 @@ export const ReactSketchCanvas = React.forwardRef<
     exportWithBackgroundImage = false,
     preserveBackgroundImageAspectRatio = "none",
     strokeWidth = 4,
+    strokeBlendMode = "normal",
     eraserWidth = 8,
     allowOnlyPointerType = "all",
     style = {
@@ -180,6 +181,7 @@ export const ReactSketchCanvas = React.forwardRef<
       drawMode: isDraw,
       strokeColor: isDraw ? strokeColor : "#000000", // Eraser using mask
       strokeWidth: isDraw ? strokeWidth : eraserWidth,
+      strokeBlendMode: isDraw ? strokeBlendMode : "normal",
       paths: [point],
     };
 

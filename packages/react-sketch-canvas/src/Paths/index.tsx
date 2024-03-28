@@ -86,6 +86,8 @@ export type SvgPathProps = {
   strokeWidth: number;
   // Color of the stroke
   strokeColor: string;
+  // Blending mode for the stroke
+  strokeBlendMode: React.CSSProperties["mixBlendMode"];
   // Bezier command to smoothen the line
   command?: (point: Point, i: number, a: Point[]) => string;
 };
@@ -98,6 +100,7 @@ export function SvgPath({
   id,
   strokeWidth,
   strokeColor,
+  strokeBlendMode,
   command = bezierCommand,
 }: SvgPathProps): JSX.Element {
   if (paths.length === 1) {
@@ -133,6 +136,9 @@ export function SvgPath({
       strokeLinecap="round"
       stroke={strokeColor}
       strokeWidth={strokeWidth}
+      style={{
+        mixBlendMode: strokeBlendMode,
+      }}
     />
   );
 }
@@ -148,6 +154,7 @@ function Paths({ id, paths }: PathProps): JSX.Element {
           id={`${id}__${index}`}
           strokeWidth={path.strokeWidth}
           strokeColor={path.strokeColor}
+          strokeBlendMode={path.strokeBlendMode}
           command={bezierCommand}
         />
       ))}
